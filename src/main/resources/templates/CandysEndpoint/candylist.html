@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+<h1>Candy List</h1>
+
+<ul>
+    {#for candy in candys}
+        <li>{candy_count}. nom : {candy.id}  parfum : {candy.flavor()} poids restant : {candy.weight}  <input type="button" value="sell" class="btn btn-primary" id="{candy.id()}"/>
+        </li>
+
+    {/for}
+</ul>
+
+<a href="/candy/form-new">Add a candy</a> <a href="/candy/all">list all candys</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+<script>
+    window.addEventListener("load", function () {
+        document.querySelectorAll("input.btn").forEach(function (e) {
+            e.addEventListener("click", function (ee) {
+                fetch("/candy/" + e.id, { method: "DELETE" }).then((data) => {
+                    location.reload();
+                })
+            })
+        })
+    });
+</script>
+</html>

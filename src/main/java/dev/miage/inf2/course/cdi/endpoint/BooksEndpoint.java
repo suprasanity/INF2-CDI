@@ -59,7 +59,7 @@ public class BooksEndpoint {
     @DELETE
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance buybook(@PathParam("isbn") String isbn) {
-        bookShop.sell(new Customer(MobyNamesGenerator.getRandomName(), MobyNamesGenerator.getRandomName(), "toto@miage.dev", "+3395387845"),isbn);
+        bookShop.sell(new Customer(MobyNamesGenerator.getRandomName(), MobyNamesGenerator.getRandomName(), "toto@miage.dev", "+3395387845",12),isbn);
         return Templates.booklist(bookShop.getAllItems());
     }
 

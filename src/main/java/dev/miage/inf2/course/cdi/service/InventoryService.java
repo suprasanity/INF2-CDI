@@ -12,4 +12,5 @@ public interface InventoryService<T> {
     long countItemsInInventory();
 
     Collection<T> listAllItems();
+
 }

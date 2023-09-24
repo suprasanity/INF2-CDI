@@ -69,4 +69,5 @@ public class InMemoryInventoryService implements InventoryService<Book> {
     public void deleteBook(String isbn) {
         this.inventory.remove(isbn);
     }
+
 }

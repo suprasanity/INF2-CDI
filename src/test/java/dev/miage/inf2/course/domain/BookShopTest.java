@@ -32,7 +32,7 @@ class BookShopTest {
 
     @BeforeEach
     private void setup() {
-        customer = new Customer(MobyNamesGenerator.getRandomName(), MobyNamesGenerator.getRandomName(), "toto@miage.dev", "+333895457896");
+        customer = new Customer(MobyNamesGenerator.getRandomName(), MobyNamesGenerator.getRandomName(), "toto@miage.dev", "+333895457896",12);
     }
 
     @Inject
